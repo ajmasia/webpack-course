@@ -1,8 +1,10 @@
 const path = require('path');
-const { getOutputFile } = require('./webpack.parts');
 
 module.exports = env => ({
-  mode: 'development',
+  mode: env.NODE_ENV,
   entry: path.resolve(__dirname, 'src', 'index.js'),
-  output: getOutputFile(env.OUT_FILENAME),
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
 });

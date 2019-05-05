@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "build": "webpack --env.OUT_FILENAME=main"
+    "webpack:dev": "webpack --env.NODE_ENV=development",
+    "webpack:prod": "webpack --env.NODE_ENV=production"
   },
   "keywords": [],
   "author": "",
