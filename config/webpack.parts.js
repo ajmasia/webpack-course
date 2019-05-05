@@ -1,8 +1,13 @@
-const path = require('path');
-
 module.exports = {
-  getOutputFile: name => ({
-    path: path.resolve(__dirname, 'dist'),
-    filename: `${name}.js`,
-  }),
+  getLouder: loader => {
+    switch (loader) {
+      case 'css':
+        return {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        };
+      default:
+        return null;
+    }
+  },
 };
