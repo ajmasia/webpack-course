@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (content => {\n    const p = document.createElement('p')\n    p.innerHTML = content\n    return p\n});\n\n//# sourceURL=webpack:///./src/components/component.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (content => {\n  const p = document.createElement('p');\n  p.innerHTML = content;\n  return p;\n});\n\n\n//# sourceURL=webpack:///./src/components/component.js?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/component */ \"./src/components/component.js\");\n\n\ndocument.body.appendChild(Object(_components_component__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('Hello world!'))\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/component */ \"./src/components/component.js\");\n\n\ndocument.body.appendChild(Object(_components_component__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('Hello world!'));\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
