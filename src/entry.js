@@ -1,6 +1,6 @@
 import Component from './components/component';
 import Image from './components/image';
-import Logo from './assets/images/logo.png';
+import Logo from './assets/images/logo-small.png';
 
 import './assets/less/styles.less';
 

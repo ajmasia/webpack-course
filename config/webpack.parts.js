@@ -1,4 +1,5 @@
 const loaders = require('./loaders');
+const plugings = require('./plugings');
 
 module.exports = {
   getRules: rules => {
@@ -13,6 +14,17 @@ module.exports = {
         }
       });
       return selectedRules;
+    }
+  },
+  getPlugings: tasks => {
+    if (tasks.length > 0) {
+      const selectedPlugings = tasks.map(task => {
+        const testPlugin = Object.prototype.hasOwnProperty.call(plugings, task);
+        if (testPlugin) {
+          return plugings[task];
+        }
+      });
+      return selectedPlugings;
     }
   },
 };
