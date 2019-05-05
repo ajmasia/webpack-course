@@ -15,9 +15,8 @@ module.exports = {
     test: /\.(png|jpg)$/,
     use: [
       {
-        loader: 'url-loader',
+        loader: 'file-loader',
         options: {
-          limit: 30000,
           name: 'assets/images/[name].[ext]',
         },
       },
@@ -25,6 +24,17 @@ module.exports = {
   },
   fonts: {
     test: /\.ttf$/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: {
+          name: 'assets/fonts/[name].[ext]',
+        },
+      },
+    ],
+  },
+  videos: {
+    test: /\.mp4$/,
     use: [
       {
         loader: 'file-loader',
