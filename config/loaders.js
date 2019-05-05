@@ -34,4 +34,15 @@ module.exports = {
       },
     ],
   },
+  fonts: {
+    test: /\.mp4$/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: {
+          name: 'assets/videos/[name].[ext]',
+        },
+      },
+    ],
+  },
 };
