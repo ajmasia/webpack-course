@@ -1,14 +1,24 @@
 const path = require('path');
-const { getLouder } = require('./config/webpack.parts');
+const { getRules } = require('./config/webpack.parts');
 
-module.exports = env => ({
-  mode: env.NODE_ENV,
-  entry: path.resolve(__dirname, 'src', 'entry.js'),
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
-  },
-  module: {
-    rules: [getLouder('css')],
-  },
-});
+const devLoaders = ['css', 'sass', 'less'];
+const prodLoaders = ['css', 'sass', 'less'];
+
+module.exports = env => {
+  const rules =
+    env.NODE_ENV === 'production'
+      ? getRules(prodLoaders)
+      : getRules(devLoaders);
+
+  return {
+    mode: env.NODE_ENV,
+    entry: path.resolve(__dirname, 'src', 'entry.js'),
+    output: {
+      path: path.resolve(__dirname, 'build'),
+      filename: 'bundle.js',
+    },
+    module: {
+      rules,
+    },
+  };
+};
