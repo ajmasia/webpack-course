@@ -1,13 +1,18 @@
+const loaders = require('./loaders');
+
 module.exports = {
-  getLouder: loader => {
-    switch (loader) {
-      case 'css':
-        return {
-          test: /\.css$/,
-          use: ['style-loader', 'css-loader'],
-        };
-      default:
-        return null;
+  getRules: rules => {
+    if (rules.length > 0) {
+      const selectedRules = rules.map(loader => {
+        const testLoader = Object.prototype.hasOwnProperty.call(
+          loaders,
+          loader
+        );
+        if (testLoader) {
+          return loaders[loader];
+        }
+      });
+      return selectedRules;
     }
   },
 };
