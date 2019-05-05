@@ -1,7 +1,7 @@
 const path = require('path');
 const { getRules } = require('./config/webpack.parts');
 
-const devLoaders = ['css', 'sass', 'less'];
+const devLoaders = ['css', 'sass', 'less', 'urlLoader'];
 const prodLoaders = ['css', 'sass', 'less'];
 
 module.exports = env => {
